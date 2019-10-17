@@ -12,7 +12,7 @@ public class Queue_DataStructure<T> {
 	
 	public void push(T data) {
 		size++;
-		list.add(0, data);
+		list.add(data);
 	}
 	
 	public T pop() throws Exception {
@@ -23,7 +23,10 @@ public class Queue_DataStructure<T> {
 		return list.remove(0);
 	}
 	
-	public T peek() {
+	public T peek() throws Exception {
+		if(size == 0) {
+			throw new Exception("Error: Queue is empty");
+		}
 		return list.get(0);
 	}
 	
